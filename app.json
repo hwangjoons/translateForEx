@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "translateForEx",
-    "slug": "translateForEx",
+    "slug": "translateforex",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b50d42f7-220c-49e8-804c-416101f5225a"
+      }
+    },
+    "owner": "month6"
   }
 }
