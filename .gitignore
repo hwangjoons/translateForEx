@@ -13,3 +13,5 @@ config.js
 
 # macOS
 .DS_Store
+
+swagger.json

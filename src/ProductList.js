@@ -1,25 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView} from 'react-native';
 
 import ProductItem from './ProductItem.js';
 
-export default function ProductList({products}) {
+export default function ProductList(props) {
+  const products = props.products;
+  const clicked = props.clicked;
+  const productView = props.productView;
+  const firstSearch = props.firstSearch;
 
   return (
-    <SafeAreaView style={styles.container}>
-      {products.map((product, index) => (
-        <ProductItem product={product} key={index}
-        />
-      ))}
-    </SafeAreaView>
+    // <ScrollView>
+      <ScrollView>
+        {products.map((product, index) => (
+          <ProductItem product={product} key={index} clicked={clicked} productView={productView} firstSearch={firstSearch}
+          />
+        ))}
+      </ScrollView>
+    // </ScrollView>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flex: 1,
+    // backgroundColor: '#E5BA73',
+    // alignItems: 'center',
+    justifyContent: 'start',
   },
 });
