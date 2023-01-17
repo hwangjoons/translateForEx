@@ -10,6 +10,7 @@ export default function ProductItem(props) {
   const productView = props.productView;
   const key = props.key;
   const firstSearch = props.firstSearch;
+  const loadFavorites = props.loadFavorites;
 
   const productClicked = () => {
     productView(product);
@@ -34,9 +35,9 @@ export default function ProductItem(props) {
           </Text>
         </Text>
         <View style={styles.buttons}>
-          <ProductItemRecord product={product} firstSearch={firstSearch} />
+          <ProductItemRecord product={product} firstSearch={firstSearch} loadFavorites={loadFavorites} />
           <Text>&nbsp;&nbsp;</Text>
-          <ProductItemDelete product={product} firstSearch={firstSearch} />
+          <ProductItemDelete product={product} firstSearch={firstSearch} loadFavorites={loadFavorites}/>
         </View>
       </View>
     </TouchableOpacity>
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // backgroundColor: '#FAEAB1',
-    backgroundColor: '#F2DDCC',
+    backgroundColor: 'white',
     alignItems: 'start',
     justifyContent: 'start',
   },
@@ -58,8 +59,9 @@ const styles = StyleSheet.create({
       // justifyContent: 'left',
     backgroundColor: '#F2DDCC',
     fontSize: 24,
-    borderWidth: 3,
-    // maxWidth: '75',
+    // borderWidth: 3,
+    width: '100%',
+    borderRadius: 10
   },
   textNames: {
     fontWeight: 'bold',

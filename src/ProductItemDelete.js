@@ -5,6 +5,7 @@ import axios from 'axios';
 export default function ProductItem(props) {
   const product = props.product;
   const firstSearch = props.firstSearch;
+  const loadFavorites = props.loadFavorites;
 
   const deleteClicked = async () => {
     // console.log(product._id);
@@ -13,7 +14,12 @@ export default function ProductItem(props) {
         query: product._id,
       },
     });
-    firstSearch();
+    if (firstSearch) {
+      firstSearch();
+    }
+    if (loadFavorites) {
+      loadFavorites();
+    }
   };
 
   return (

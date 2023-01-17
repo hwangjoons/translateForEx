@@ -51,6 +51,7 @@ module.exports = {
             ticker: response.data['Meta Data']['2. Symbol'],
             closing_price: response.data['Time Series (Daily)']['2023-01-13']['4. close'],
             date: response.data['Meta Data']['3. Last Refreshed'],
+            record: false,
           }
         );
         await addStock.save();
@@ -104,6 +105,7 @@ module.exports = {
           ticker: response.data['Meta Data']['2. Symbol'],
           closing_price: response.data['Time Series (Daily)'][`${req.body.params.date}`]['4. close'],
           date: req.body.params.date,
+          record: false,
         }
       );
       await addStock.save();
@@ -117,7 +119,42 @@ module.exports = {
       //   date: req.body.date
       // })
     } catch (error) {
-      console.log(error, '123')
+      res.status(500).send({ error });
+    }
+  },
+  recordStock : async (req, res) => {
+    try {
+      const filter = { _id: req.body.params.query };
+      const update = { record: true };
+      const updateStock = await Stock.findOneAndUpdate(filter, update, {
+        new: true
+      });
+      res.status(200).send(updateStock);
+      res.end();
+    } catch (error) {
+      res.status(500).send({ error });
+    }
+  },
+  unrecordStock : async (req, res) => {
+    try {
+      const filter = { _id: req.body.params.query };
+      const update = { record: false };
+      const updateStock = await Stock.findOneAndUpdate(filter, update, {
+        new: true
+      });
+      res.status(200).send(updateStock);
+      res.end();
+    } catch (error) {
+      res.status(500).send({ error });
+    }
+  },
+  getRecordStock : async (req, res) => {
+    try {
+      const response = await Stock.find( { record: true } );
+      console.log(response, '12');
+      res.status(200).send(response);
+      res.end();
+    } catch (error) {
       res.status(500).send({ error });
     }
   }

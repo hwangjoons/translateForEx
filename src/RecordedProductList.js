@@ -3,14 +3,13 @@ import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView} from 'react-na
 
 import ProductItem from './ProductItem.js';
 
-export default function ProductList(props) {
+export default function RecordedProductList(props) {
   const products = props.products;
   const clicked = props.clicked;
   const productView = props.productView;
   const firstSearch = props.firstSearch;
   const loadFavorites = props.loadFavorites;
 
-  // console.log(loadFavorites);
   return (
     // <ScrollView>
       <ScrollView>
@@ -26,6 +25,9 @@ export default function ProductList(props) {
 
 const styles = StyleSheet.create({
   container: {
+    // flex: 1,
+    // backgroundColor: '#E5BA73',
+    // alignItems: 'center',
     justifyContent: 'start',
   },
 });

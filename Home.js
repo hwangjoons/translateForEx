@@ -82,6 +82,7 @@ export default function Home() {
       console.log('this is an error', err);
     }
   }
+
   useEffect(() => {
       firstSearch();
   }, [isFocused]);
@@ -149,7 +150,7 @@ export default function Home() {
           )}
 
         </Formik>
-        <SafeAreaProvider style={{flex: 1}}>
+        <SafeAreaProvider style={{flex: 1, marginTop: 3}}>
           <ScrollView contentContainerStyle={styles.scroll}>
           {/* <SafeAreaView> */}
             <ProductList productView={productView} clicked={productClicked} products={allProducts} firstSearch={firstSearch} />
@@ -160,7 +161,7 @@ export default function Home() {
     );
   } else {
     return (
-      <SafeAreaView style={styles.bigcontainer}>
+      <SafeAreaView style={styles.bigcontainerProduct}>
         <Button
           onPress={() => setProductClicked(false)}
           title="Back"
@@ -176,6 +177,13 @@ export default function Home() {
 const styles = StyleSheet.create({
   bigcontainer: {
     flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // flexDirection: 'column'
+  },
+  bigcontainerProduct: {
+    flex: 1,
     backgroundColor: '#F2DDCC',
     alignItems: 'center',
     justifyContent: 'center',
@@ -183,7 +191,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#F2DDCC',
+    backgroundColor: 'white',
     // alignSelf: 'flex-start',
     // alignItems: 'center',
     justifyContent: 'center',
@@ -196,20 +204,18 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     flexDirection: 'row',
     width: '100%',
+    // marginBottom: '20'
     // marginHorizontal: 20,
 
   },
   bin1: {
     flex: 1,
-    // backgroundColor: '#E5BA73',
     alignSelf: 'flex-start',
     alignItems: 'center',
     justifyContent: 'center',
-    // flexDirection: 'row',
   },
   bin2: {
     flex: 2,
-    // backgroundColor: '#FAEAB1',
     alignSelf: 'flex-end',
     alignItems: 'center',
     justifyContent: 'center',
@@ -222,18 +228,17 @@ const styles = StyleSheet.create({
     // flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    // borderWidth: 4,
-    // borderColor: 'white',
+    paddingBottom: 80,
   },
   currencyPart: {
     // marginTop: 50,
     marginTop: 10,
     width: '100%',
     flex: 1,
-    backgroundColor: '#F2DDCC',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 4,
+    // borderWidth: 4,
   },
   searchInput: {
     borderWidth: 1,
@@ -247,6 +252,9 @@ const styles = StyleSheet.create({
   },
   searchContainer: {
     flexDirection: 'row',
+  },
+  backButton: {
+    backgroundColor: '#f2ddcc'
   }
 });
 

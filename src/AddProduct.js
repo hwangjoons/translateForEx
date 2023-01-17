@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View, Image, SafeAreaView, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+// import { NavigationContainer } from '@react-navigation/native';
 
-import ProductCurrencyList from './ProductCurrencyList.js';
-import ProductCryptoList from './ProductCryptoList.js';
+// import ProductCurrencyList from './ProductCurrencyList.js';
+// import ProductCryptoList from './ProductCryptoList.js';
 
 import { Formik } from 'formik';
 
@@ -14,10 +14,11 @@ import axios from 'axios';
 export default function AddProduct() {
 
   const addNewStock = async (values) => {
-    console.log(values);
+    // console.log(values);
+    let capitalized = values.ticker.toUpperCase();
     await axios.post(`http://localhost:19001/stock/add`, {
       params: {
-        ticker: values.ticker,
+        ticker: capitalized,
         date: values.date
       }
     })
@@ -66,7 +67,8 @@ export default function AddProduct() {
 const styles = StyleSheet.create({
   bigcontainer: {
     flex: 1,
-    backgroundColor: '#f2ddcc',
+    // backgroundColor: '#f2ddcc',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     // flexDirection: 'column'

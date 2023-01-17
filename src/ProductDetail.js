@@ -11,8 +11,9 @@ export default function ProductDetail(props) {
   const product = props.currentProduct;
   const currency = props.currentCurrency;
   const crypto = props.currentCrypto;
+  // const loadFavorites = props.loadFavorites;
 
-  console.log(currency);
+  // console.log(currency);
 
   return (
     <View style={styles.bigcontainer}>
@@ -36,10 +37,9 @@ export default function ProductDetail(props) {
 const styles = StyleSheet.create({
   bigcontainer: {
     flex: 1,
-    // backgroundColor: '#C58940',
     alignItems: 'center',
     justifyContent: 'center',
-    // flexDirection: 'column'
+    backgroundColor: '#F2DDCC'
   },
   container: {
     flex: 1,
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     // height: 100,
+    // width: '75%'
   },
   textContainer: {
     size: '100',

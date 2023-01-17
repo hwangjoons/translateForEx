@@ -7,6 +7,7 @@ const stockSchema = new mongoose.Schema({
   ticker: String,
   closing_price: String,
   date: String,
+  record: Boolean,
 });
 
 const Stock = mongoose.model('Stock', stockSchema);
