@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   },
   bigcontainerProduct: {
     flex: 1,
-    backgroundColor: '#F2DDCC',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     // flexDirection: 'column'

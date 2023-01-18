@@ -17,6 +17,18 @@ module.exports = {
       res.status(500).send({ error });
     }
   },
+  getStock : async(req, res) => {
+    console.log(req.query.query);
+    try {
+      const response = await Stock.find({
+        _id: req.query.query
+      });
+      res.status(200).send(response);
+      res.end();
+    } catch (error) {
+      res.status(500).send({ error });
+    }
+  },
   updateAllStocks : async (req, res) =>  {
     // console.log('test');
     const top50 = ['AAPL', 'MSFT', 'GOOG', 'AMZN', 'BRK.A', 'XOM', 'V', 'UNH', 'JNJ', 'JPM', 'NVDA', 'WMT', 'TSLA', 'MA', 'META', 'PG', 'LLY', 'CVX', 'HD', 'MRK', 'BAC', 'ABBV', 'PFE', 'KO', 'AVGO', 'PEP', 'ORCL', 'TMO', 'COST', 'CSCO', 'NKE', 'DHR', 'ABT', 'MCD', 'ACN', 'DIS', 'VZ', 'WFC', 'CMCSA', 'NEE', 'LIN', 'TXN', 'ADBE', 'PM', 'UPS', 'MS', 'SCHW', 'BMY', 'COP', 'CRM'];

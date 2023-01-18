@@ -14,24 +14,49 @@ export default function ProductItemRecord(props) {
 
   const RecordClicked = async () => {
     // console.log(product._id);
-    if (!isItClicked) {
+    // console.log('isItclicked is', isItClicked);
+    // console.log('firstSearch is', firstSearch);
+    // console.log('loadFavorites is', loadFavorites);
+    // console.log(product._id);
+    let current = await axios.get(`http://localhost:19001/stock/getstock`, {
+      params: {
+        query: product._id,
+      },
+    });
+    console.log('12', current.data[0].record);
+
+    if (!current.data[0].record) {
       await axios.post(`http://localhost:19001/stock/record`, {
         params: {
           query: product._id,
         },
       });
-    } else if (isItClicked) {
+      if (firstSearch) {
+        // loadFavorites();
+        firstSearch();
+      }
+      if (loadFavorites) {
+        loadFavorites();
+      }
+
+      console.log(current.data.record);
+
+    } else {
       await axios.post(`http://localhost:19001/stock/unrecord`, {
         params: {
           query: product._id,
         },
       });
-    }
-    if (firstSearch) {
-      firstSearch();
-    }
-    if (loadFavorites) {
-      loadFavorites();
+      if (firstSearch) {
+        // loadFavorites();
+        firstSearch();
+      }
+      if (loadFavorites) {
+        loadFavorites();
+      }
+
+      console.log(current.data.record);
+
     }
 
     setIsItClicked(!isItClicked);
