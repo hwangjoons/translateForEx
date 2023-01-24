@@ -15,3 +15,20 @@ This project was created in 2 days time as part of my HackReactor bootcamp's jou
 # Functionalities
 
 # How to get started
+1. Clone the repo
+    ```
+    git clone https://github.com/codejune9th/translateForEx.git
+    ```
+2. Install all required packages in both client and server folders
+    ```
+    npm install
+    ```
+3. Compile the client-side code and start Metro Bundler
+   ```
+   npm run start 
+   ```
+4. Scan the QR code from Metro Bundler in Terminal OR download and install XCode (iOS simulator) and press i to start the simluator on your computer
+5. Start the server
+   ```
+   npm run server
+   ```
