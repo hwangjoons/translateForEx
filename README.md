@@ -28,6 +28,9 @@ This project was created in 2 days time as part of my HackReactor bootcamp's jou
    npm run start 
    ```
 4. Scan the QR code from Metro Bundler in Terminal OR download and install XCode (iOS simulator) and press i to start the simluator on your computer
+   ```
+   Download XCode for iOS here: https://developer.apple.com/xcode/
+   ```
 5. Start the server
    ```
    npm run server
