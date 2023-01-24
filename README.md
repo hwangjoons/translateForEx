@@ -5,7 +5,7 @@ along with its conversion values in 10 foreign currencies and 10 cryptocurrencie
 
 The stock prices are retrieved via Alpha Vantage API (https://www.alphavantage.co/documentation/) of any given date (starting from 2022).
 
-The application is able to retrieve, record, save, and favorite stock prices at a given day's closing price within the mobile application.
+The application is able to retrieve, record, save, and mark favorite stock prices at a given day's closing price within the mobile application.
 
 This project was created in 2 days time as part of my HackReactor bootcamp's journey.
 
